@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Small array containing a travel sentence requested by the user
+const travelSentences = ["I love to visit New York, Paris, and Tokyo."];
+
 function MainContent() {
   return (
     <main style={{
@@ -25,6 +28,13 @@ function MainContent() {
           color: '#34495e'
         }}>
           This is the main content area of our website. Here you can find interesting information about various topics.
+        </p>
+        <p style={{
+          marginTop: '12px',
+          fontStyle: 'italic',
+          color: '#2c3e50'
+        }}>
+          {travelSentences[0]}
         </p>
       </section>
     </main>
