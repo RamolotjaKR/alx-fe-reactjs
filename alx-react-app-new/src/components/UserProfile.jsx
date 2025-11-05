@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Add a small colors array and use it for styling the user's name
+const colors = ["blue"];
+
 function UserProfile(props) {
   return (
     <div style={{ 
@@ -12,7 +15,7 @@ function UserProfile(props) {
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
       <h2 style={{ 
-        color: '#2c3e50', 
+        color: colors[0], 
         marginBottom: '15px',
         fontSize: '1.5em'
       }}>{props.name}</h2>
