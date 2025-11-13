@@ -1,8 +1,36 @@
-// Convenience bridge: re-export the Zustand hook from the central store
-// This prevents accidentally creating multiple stores if components import
-// from this path instead of `src/store/recipeStore.js`.
+import { create } from 'zustand';
 
-import { useRecipeStore } from '../store/recipeStore';
+export const useRecipeStore = create((set) => ({
+  recipes: [],
+
+  // Add a new recipe
+  addRecipe: (newRecipe) =>
+    set((state) => ({
+      recipes: [
+        ...state.recipes,
+        {
+          ...newRecipe,
+          id: Date.now().toString(), // Simple ID generation using timestamp
+        },
+      ],
+    })),
+
+  // Set the entire recipes list
+  setRecipes: (recipes) => set({ recipes }),
+
+  // Update an existing recipe
+  updateRecipe: (recipeId, updatedRecipe) =>
+    set((state) => ({
+      recipes: state.recipes.map((recipe) =>
+        recipe.id === recipeId ? { ...recipe, ...updatedRecipe } : recipe
+      ),
+    })),
+
+  // Delete a recipe
+  deleteRecipe: (recipeId) =>
+    set((state) => ({
+      recipes: state.recipes.filter((recipe) => recipe.id !== recipeId),
+    })),
+}));
 
 export default useRecipeStore;
-export { useRecipeStore };
