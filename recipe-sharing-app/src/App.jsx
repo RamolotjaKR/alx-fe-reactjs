@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
 import RecipeDetails from './components/RecipeDetails';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeList from './components/RecipeList';
 import './App.css';
 
 function App() {
@@ -16,7 +17,17 @@ function App() {
 
         <main className="app-main">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <div className="home-container">
+                  <div className="content-grid">
+                    <AddRecipeForm />
+                    <RecipeList />
+                  </div>
+                </div>
+              }
+            />
             <Route path="/recipe/:id" element={<RecipeDetails />} />
           </Routes>
         </main>
