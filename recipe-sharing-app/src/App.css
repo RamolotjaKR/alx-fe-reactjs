@@ -281,6 +281,205 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Search Bar Styling */
+.search-bar-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+/* Favorites List Styling */
+.favorites-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.favorites-container.empty {
+  text-align: center;
+  background: linear-gradient(135deg, #ffe0e0 0%, #ffd4e5 100%);
+}
+
+.favorites-container h2 {
+  color: #d32f2f;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.favorites-container.empty p {
+  color: #c62828;
+  font-style: italic;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.favorite-card {
+  background: linear-gradient(135deg, #ffe0e0 0%, #fff0f2 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #d32f2f;
+  transition: all 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.2);
+}
+
+.favorite-card h3 {
+  color: #c62828;
+  margin-bottom: 0.5rem;
+}
+
+.favorite-card .description {
+  color: #666;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Recommendations Styling */
+.recommendations-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.recommendations-container.empty {
+  text-align: center;
+  background: linear-gradient(135deg, #fff8e1 0%, #fff9c4 100%);
+}
+
+.recommendations-container h2 {
+  color: #f57f17;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.recommendations-container.empty p {
+  color: #e65100;
+  font-style: italic;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.recommendation-card {
+  background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #f57f17;
+  transition: all 0.3s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(245, 127, 23, 0.2);
+}
+
+.recommendation-card h3 {
+  color: #e65100;
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-card .description {
+  color: #666;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Recipe Card Favorite Button */
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-header h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0.25rem;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+}
+
+.favorite-btn.active {
+  color: #d32f2f;
+}
+
+.view-recipe-btn {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.view-recipe-btn:hover {
+  background: #764ba2;
+  transform: translateX(4px);
+}
+
 .recipe-details.error {
   text-align: center;
   background: #ffebee;
@@ -455,5 +654,14 @@ body {
 
   .form-actions button {
     width: 100%;
+  }
+
+  .favorites-grid,
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
   }
 }
