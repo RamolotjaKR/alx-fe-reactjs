@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
 
 const FavoritesList = () => {
+  // Get all recipes and favorite IDs from the store
   const recipes = useRecipeStore((state) => state.recipes);
   const favorites = useRecipeStore((state) => state.favorites);
 
+  // Filter recipes to show only those that are in the favorites array
   const favoriteRecipes = recipes.filter((recipe) => favorites.includes(recipe.id));
 
   if (favoriteRecipes.length === 0) {

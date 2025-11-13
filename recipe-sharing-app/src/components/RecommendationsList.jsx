@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
 
 const RecommendationsList = () => {
+  // Subscribe to recommendations and the generation function from the store
   const recommendations = useRecipeStore((state) => state.recommendations);
   const generateRecommendations = useRecipeStore(
     (state) => state.generateRecommendations
   );
   const favorites = useRecipeStore((state) => state.favorites);
 
+  // Automatically generate recommendations whenever the favorites list changes
+  // This ensures recommendations stay fresh and relevant to user preferences
   useEffect(() => {
     if (favorites.length > 0) {
       generateRecommendations();

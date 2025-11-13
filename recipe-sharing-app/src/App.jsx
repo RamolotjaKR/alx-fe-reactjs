@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
@@ -15,6 +15,10 @@ function App() {
           <div className="header-content">
             <h1>🥘 Recipe Sharing App</h1>
             <p className="tagline">Discover, Create, and Share Amazing Recipes</p>
+            <nav className="main-nav">
+              <Link to="/" className="nav-link">Home</Link>
+              <Link to="/favorites" className="nav-link">❤️ My Favorites</Link>
+            </nav>
           </div>
         </header>
 

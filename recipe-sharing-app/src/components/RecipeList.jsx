@@ -2,18 +2,20 @@ import { Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
 
 const RecipeList = () => {
+  // Subscribe to relevant parts of the Zustand store
   const recipes = useRecipeStore((state) => state.recipes);
   const searchTerm = useRecipeStore((state) => state.searchTerm);
   const favorites = useRecipeStore((state) => state.favorites);
   const addFavorite = useRecipeStore((state) => state.addFavorite);
   const removeFavorite = useRecipeStore((state) => state.removeFavorite);
 
-  // Filter recipes based on search term
+  // Filter recipes based on search term (searches in title and description)
   const filteredRecipes = recipes.filter((recipe) =>
     recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     (recipe.description && recipe.description.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  // Toggle favorite status for a recipe
   const toggleFavorite = (recipeId) => {
     if (favorites.includes(recipeId)) {
       removeFavorite(recipeId);
