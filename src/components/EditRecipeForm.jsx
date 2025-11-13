@@ -8,8 +8,8 @@ const EditRecipeForm = ({ recipe, onSuccess, onCancel }) => {
   const [message, setMessage] = useState('');
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     if (title.trim() && description.trim()) {
       setSaving(true);
