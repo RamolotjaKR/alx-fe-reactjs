@@ -82,4 +82,57 @@ export const getUserRepositories = async (username) => {
   }
 };
 
+/**
+ * Advanced search for GitHub users with multiple criteria
+ * @param {Object} criteria - Search criteria object
+ * @param {string} criteria.username - Username to search for
+ * @param {string} criteria.location - Location filter
+ * @param {number} criteria.minRepos - Minimum number of repositories
+ * @param {number} criteria.page - Page number for pagination (default: 1)
+ * @param {number} criteria.perPage - Results per page (default: 30)
+ * @returns {Promise} - Promise containing search results with pagination info
+ */
+export const advancedSearchUsers = async (criteria) => {
+  try {
+    // Build the query string based on provided criteria
+    const queryParts = [];
+    
+    if (criteria.username && criteria.username.trim()) {
+      queryParts.push(criteria.username.trim());
+    }
+    
+    if (criteria.location && criteria.location.trim()) {
+      queryParts.push(`location:${criteria.location.trim()}`);
+    }
+    
+    if (criteria.minRepos && criteria.minRepos > 0) {
+      queryParts.push(`repos:>=${criteria.minRepos}`);
+    }
+    
+    // If no query parts, return empty results
+    if (queryParts.length === 0) {
+      return {
+        items: [],
+        total_count: 0,
+        incomplete_results: false
+      };
+    }
+    
+    const query = queryParts.join('+');
+    const page = criteria.page || 1;
+    const perPage = criteria.perPage || 30;
+    
+    const response = await githubApi.get(
+      `/search/users?q=${encodeURIComponent(query)}&page=${page}&per_page=${perPage}`
+    );
+    
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data?.message || 'Failed to search users');
+    }
+    throw error;
+  }
+};
+
 export default githubApi;
