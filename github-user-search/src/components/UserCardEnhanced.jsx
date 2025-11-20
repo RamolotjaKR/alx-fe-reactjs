@@ -12,7 +12,7 @@ function UserCard({ user }) {
         const data = await fetchUserData(user.login);
         setDetailedData(data);
       } catch (error) {
-        console.error('Failed to fetch user details:', error);
+        // Error handled silently in production
       } finally {
         setLoading(false);
       }
