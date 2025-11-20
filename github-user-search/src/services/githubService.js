@@ -19,7 +19,7 @@ const githubApi = axios.create({
  * @param {string} username - The username to search for
  * @returns {Promise} - Promise containing user data
  */
-export const fetchUserData = async (username: string) => {
+export const fetchUserData = async (username) => {
   try {
     const response = await githubApi.get(`/users/${username}`);
     return response.data;
@@ -36,7 +36,7 @@ export const fetchUserData = async (username: string) => {
  * @param {string} username - The username to search for
  * @returns {Promise} - Promise containing user data
  */
-export const searchUser = async (username: string) => {
+export const searchUser = async (username) => {
   try {
     const response = await githubApi.get(`/users/${username}`);
     return response.data;
@@ -53,7 +53,7 @@ export const searchUser = async (username: string) => {
  * @param {string} query - The search query
  * @returns {Promise} - Promise containing search results
  */
-export const searchUsers = async (query: string) => {
+export const searchUsers = async (query) => {
   try {
     const response = await githubApi.get(`/search/users?q=${query}`);
     return response.data;
@@ -70,7 +70,7 @@ export const searchUsers = async (query: string) => {
  * @param {string} username - The username
  * @returns {Promise} - Promise containing user repositories
  */
-export const getUserRepositories = async (username: string) => {
+export const getUserRepositories = async (username) => {
   try {
     const response = await githubApi.get(`/users/${username}/repos`);
     return response.data;
