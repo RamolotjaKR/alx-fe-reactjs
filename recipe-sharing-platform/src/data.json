@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/300x200/FFB6C1/000000?text=Spaghetti+Carbonara"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/300x200/87CEEB/000000?text=Chicken+Tikka+Masala"
+  },
+  {
+    "id": 3,
+    "title": "Caesar Salad",
+    "summary": "A refreshing salad with romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
+    "image": "https://via.placeholder.com/300x200/90EE90/000000?text=Caesar+Salad"
+  },
+  {
+    "id": 4,
+    "title": "Beef Tacos",
+    "summary": "Delicious Mexican-style tacos with seasoned ground beef, lettuce, cheese, and salsa.",
+    "image": "https://via.placeholder.com/300x200/FFD700/000000?text=Beef+Tacos"
+  },
+  {
+    "id": 5,
+    "title": "Margherita Pizza",
+    "summary": "Traditional Italian pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
+    "image": "https://via.placeholder.com/300x200/FF6347/000000?text=Margherita+Pizza"
+  },
+  {
+    "id": 6,
+    "title": "Chocolate Brownies",
+    "summary": "Rich, fudgy chocolate brownies that are perfect for dessert or a sweet treat.",
+    "image": "https://via.placeholder.com/300x200/8B4513/FFFFFF?text=Chocolate+Brownies"
+  }
+]
