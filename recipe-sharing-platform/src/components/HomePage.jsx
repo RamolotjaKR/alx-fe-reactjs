@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import recipeData from '../data.json';
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulating data fetch from JSON file
@@ -34,6 +36,7 @@ const HomePage = () => {
           {recipes.map((recipe) => (
             <div
               key={recipe.id}
+              onClick={() => navigate(`/recipe/${recipe.id}`)}
               className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
             >
               {/* Recipe Image */}
