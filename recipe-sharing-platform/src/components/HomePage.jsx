@@ -16,10 +16,31 @@ const HomePage = () => {
       {/* Header Section */}
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-4xl font-bold text-gray-800 text-center">
-            🍳 Recipe Sharing Platform
-          </h1>
-          <p className="text-center text-gray-600 mt-2">
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+              🍳 Recipe Sharing Platform
+            </h1>
+            <Link
+              to="/add-recipe"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 md:px-6 rounded-lg transition duration-300 flex items-center shadow-md hover:shadow-lg"
+            >
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+              Add Recipe
+            </Link>
+          </div>
+          <p className="text-center text-gray-600">
             Discover and share amazing recipes from around the world
           </p>
         </div>
