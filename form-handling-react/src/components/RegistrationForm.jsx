@@ -10,6 +10,9 @@ const RegistrationForm = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  
+  // Destructure form values for easier access
+  const { username, email, password } = formData;
 
   // Handle input changes
   const handleChange = (e) => {
@@ -100,7 +103,7 @@ const RegistrationForm = () => {
             type="text"
             id="username"
             name="username"
-            value={formData.username}
+            value={username}
             onChange={handleChange}
             className={errors.username ? 'error-input' : ''}
           />
@@ -116,7 +119,7 @@ const RegistrationForm = () => {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
+            value={email}
             onChange={handleChange}
             className={errors.email ? 'error-input' : ''}
           />
@@ -132,7 +135,7 @@ const RegistrationForm = () => {
             type="password"
             id="password"
             name="password"
-            value={formData.password}
+            value={password}
             onChange={handleChange}
             className={errors.password ? 'error-input' : ''}
           />
@@ -149,7 +152,7 @@ const RegistrationForm = () => {
         {/* Success Message */}
         {submitted && (
           <div className="success-message">
-            Registration successful! Welcome, {formData.username}!
+            Registration successful! Welcome, {username}!
           </div>
         )}
 
