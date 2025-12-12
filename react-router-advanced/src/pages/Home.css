@@ -1,0 +1,50 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-container h1 {
+  color: #61dafb;
+  margin-bottom: 1rem;
+}
+
+.page-container ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.page-container li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.2);
+}
+
+.card h3 {
+  color: #61dafb;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
