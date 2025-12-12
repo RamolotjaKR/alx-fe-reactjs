@@ -4,7 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './App.css';
 import Navigation from './components/Navigation';
 import RegistrationForm from './components/RegistrationForm';
-import FormikForm from './components/FormikForm';
+import FormikForm from './components/formikForm';
 import PostsComponent from './components/PostsComponent';
 import UsersComponent from './components/UsersComponent';
 
