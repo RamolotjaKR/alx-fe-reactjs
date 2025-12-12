@@ -1,5 +1,7 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, Routes, Route } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import ProfileDetails from '../pages/ProfileDetails';
+import ProfileSettings from '../pages/ProfileSettings';
 import '../pages/Profile.css';
 
 const Profile = () => {
