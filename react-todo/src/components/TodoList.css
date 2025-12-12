@@ -1,0 +1,24 @@
+.todo-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin-top: 30px;
+}
