@@ -1,8 +1,9 @@
-# Form Handling in React Tutorial
+# React Advanced Tutorial: Forms & Data Fetching
 
-This project demonstrates two approaches to handling forms in React:
+This comprehensive project demonstrates modern React development patterns:
 1. **Controlled Components** - Manual state management using React's `useState`
 2. **Formik + Yup** - Advanced form handling with built-in validation
+3. **React Query** - Advanced data fetching, caching, and state management
 
 ## 🚀 Getting Started
 
@@ -28,8 +29,12 @@ src/
 │   ├── RegistrationForm.jsx    # Controlled components approach
 │   ├── RegistrationForm.css
 │   ├── FormikForm.jsx          # Formik + Yup approach
-│   └── FormikForm.css
-├── App.jsx                      # Main application component
+│   ├── FormikForm.css
+│   ├── PostsComponent.jsx      # React Query data fetching
+│   ├── PostsComponent.css
+│   ├── Navigation.jsx          # Navigation component
+│   └── Navigation.css
+├── App.jsx                      # Main application with React Query setup
 └── App.css                      # Application styles
 ```
 
@@ -104,6 +109,8 @@ Both forms simulate an API call with a 1-second delay:
 - **Vite** - Build tool
 - **Formik** - Form management library
 - **Yup** - Schema validation library
+- **React Query** (@tanstack/react-query) - Data fetching and caching
+- **React Query DevTools** - Cache inspection and debugging
 
 ## 📚 Learning Outcomes
 
@@ -120,8 +127,22 @@ Both forms simulate an API call with a 1-second delay:
 ✅ Submission state management
 ✅ Form reset and status handling
 
+### React Query
+✅ Advanced data fetching patterns
+✅ Automatic caching and background refetching
+✅ Loading and error state management
+✅ Request deduplication
+✅ Cache invalidation and manual refetch
+✅ Using React Query DevTools
+
+## 📖 Documentation
+
+- **[REACT_QUERY_GUIDE.md](./REACT_QUERY_GUIDE.md)** - Comprehensive React Query implementation guide
+
 ## 🔗 Useful Resources
 
 - [React Forms Documentation](https://react.dev/reference/react-dom/components/input)
 - [Formik Documentation](https://formik.org/docs/overview)
 - [Yup Documentation](https://github.com/jquense/yup)
+- [React Query Documentation](https://tanstack.com/query/latest)
+- [JSONPlaceholder API](https://jsonplaceholder.typicode.com/)
