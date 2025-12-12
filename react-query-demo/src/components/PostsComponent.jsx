@@ -9,7 +9,7 @@ const fetchPosts = async () => {
 }
 
 function PostsComponent() {
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
     staleTime: 5000,
@@ -18,12 +18,17 @@ function PostsComponent() {
     keepPreviousData: true
   })
 
+  const handleRefresh = () => {
+    refetch()
+  }
+
   if (isLoading) return <div>Loading posts...</div>
   if (isError) return <div>Error: {error.message}</div>
 
   return (
     <div>
       <h2>Posts</h2>
+      <button onClick={handleRefresh}>Refresh Posts</button>
       <ul>
         {data?.slice(0, 10).map(post => (
           <li key={post.id}>
