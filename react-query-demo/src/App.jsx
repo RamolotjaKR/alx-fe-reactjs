@@ -1,13 +1,24 @@
 import { useState } from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
+const queryClient = new QueryClient()
+
+function PostsComponent() {
+  return (
+    <div>
+      <h2>Posts Component</h2>
+    </div>
+  )
+}
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,7 +39,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+      <PostsComponent />
+    </QueryClientProvider>
   )
 }
 
